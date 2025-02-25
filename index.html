@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATA DIVE - Power BI Hackathon 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  </head>
+  <body
+    style="
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #ebebff;
+      margin: 0;
+      padding: 0;
+    ">
+    
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img
+        src="assets/pics/DataDive.png"
+        alt="Data Dive Logo"
+        height="80"
+        class="me-3"
+      />
+      <span class="brand-title">DATA DIVE</span> 
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="schedule.html">Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="venue.html">Venue</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registration.html">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="winners.html">Winners</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .brand-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    position: relative;
+    display: inline-block;
+  }
+
+  .brand-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(228, 210, 49, 0.926);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underlineAnimation 2s infinite alternate ease-in-out;
+  }
+
+  @keyframes underlineAnimation {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    50% {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    100% {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 12px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem; 
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; 
+  }
+
+  .nav-link:hover {
+    background-color: rgba(239, 237, 237, 0.399);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(241, 238, 238, 0.938);
+  }
+</style>
+
+<!-- Header with Logos -->
+<header class="sponsors-header">
+  <div class="sponsors-container">
+    <img src="assets/pics/mbaesg-logo.png" alt="MBA ESG" class="sponsor-logo" />
+    <img src="assets/pics/hetic-logo.svg" alt="HETIC" class="sponsor-logo" />
+    <img src="assets/pics/jgi-logo.png" alt="JGI Jain" class="sponsor-logo" />
+  </div>
+</header>
+
+<style>
+  .sponsors-header {
+    text-align: center;
+    padding: 20px 20px;
+    background: linear-gradient(135deg, #ffffff, #6610f2);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .sponsors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .sponsor-logo {
+    max-height: 80px;
+    width: auto;
+    padding: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+  }
+
+  .sponsor-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid #ffffff;
+  }
+</style>
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <h1>DATA DIVE</h1>
+  <h2>Power BI Hackathon 2025</h2>
+  <a href="registration.html" class="register-btn">Register Now</a>
+</section>
+
+<style>
+  .hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('assets/pics/design.png') center/cover no-repeat;
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    margin: 20px;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+    border-radius: 10px;
+  }
+
+  .hero-section h1, 
+  .hero-section h2, 
+  .register-btn {
+    position: relative;
+    z-index: 2; 
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+
+  .register-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: yellow;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    animation: heartbeat 2.5s infinite ease-in-out; 
+  }
+
+  .register-btn:hover {
+    animation: none;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+</style>
+
+<!-- Mini Navigation for Events -->
+<nav class="mini-nav">
+  <ul>
+    <li><a href="#hackstorm">HackStorm</a></li>
+    <li><a href="#datastory">Data Storyteller</a></li>
+    <li><a href="#powerbingo">Power BI Bingo</a></li>
+  </ul>
+</nav>
+
+<style>
+  .mini-nav {
+    margin: 20px auto;
+    text-align: center;
+    background: #f8f9fa;
+    padding: 20px 15px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+
+  .mini-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center; 
+  }
+
+  .mini-nav li {
+    display: inline;
+  }
+
+  .mini-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 12px; 
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mini-nav a:hover {
+    background: #6610f2;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+
+<!-- Event Sections -->
+<section class="event-section">
+  <!-- HackStorm -->
+  <div id="hackstorm" class="event-box">
+    <img src="assets/pics/hackstorm-icon.webp" alt="HackStorm Icon" />
+    <h5>HackStorm: The Power BI Hackathon</h5>
+    <p>
+      HackStorm is an intense, real-time Power BI competition where participants
+      race against the clock to clean, analyze, and visualize data. Designed to
+      mimic real-world business challenges, this event tests participants' ability
+      to transform raw datasets into actionable insights through efficient data
+      cleaning, interactive dashboards, and compelling storytelling.
+    </p>
+  </div>
+
+  <!-- Data Storyteller -->
+  <div id="datastory" class="event-box">
+    <img src="assets/pics/datastory-icon.jpeg" alt="Data Storyteller Icon" />
+    <h5>The Data Storyteller: Turning Numbers into Narratives</h5>
+    <p>
+      The Data Storyteller challenges participants to go beyond dashboards and
+      craft compelling, insight-driven narratives. By blending data analysis with
+      storytelling, this competition pushes participants to transform raw numbers
+      into meaningful stories that drive action and decision-making.
+    </p>
+  </div>
+
+  <!-- Power BI Bingo -->
+  <div id="powerbingo" class="event-box">
+    <img src="assets/pics/powerbingo-icon.jpeg" alt="Power BI Bingo Icon" />
+    <h5>Power BI Bingo: Gamifying Data Analytics</h5>
+    <p>
+      Power BI Bingo transforms data analysis into a fast-paced, strategic game
+      where creativity and technical skills collide. Participants tackle
+      unconventional Power BI challenges in a Bingo-style format, pushing them to
+      think quickly, experiment boldly, and turn data into a fun, competitive
+      experience.
+    </p>
+  </div>
+</section>
+
+<style>
+.event-box {
+  max-width: 350px;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ddd; 
+  transition: all 0.3s ease-in-out;
+}
+
+.event-box:hover {
+  transform: scale(1.05); 
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #6610f2; 
+}
+
+.event-box img {
+  width: 50%; 
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-box:hover img {
+  transform: scale(1.1);
+}
+
+.event-box h5 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.event-box p {
+  margin-top: 20px;
+  text-align: justify;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.event-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; 
+  padding: 20px;
+}
+</style>
+
+    <!-- Footer -->
+<footer
+style="
+  text-align: center;
+  padding: 15px;
+  background-color: #343a40;
+  color: white;
+  margin-top: 20px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+"
+>
+<p
+  style="
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+  "
+>
+  © 2025 Data Dive - Power BI Hackathon | Organized by MBA ESG, JGI Jain, HETIC
+</p>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
